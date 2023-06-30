@@ -22,15 +22,7 @@ return <React.Fragment>
                                     <img src="images/aboutme.jpg" alt="fig" />
                                 </div>
                                 <div class="download-wrap txt-center">
-                                    <a href="download/roshanaalemagar.
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    " class="download-btn" download="roshanaalemagar" target="_blank">DOWNLOAD RESUME <i class="fa fa-download ml-2"></i></a>
+                                    <a href="download/roshanaalemagar" class="download-btn" download="roshanaalemagar" target="_blank">DOWNLOAD RESUME <i class="fa fa-download ml-2"></i></a>
                                 </div>
                             </div>
                             <div class="col-lg-8 col-12">

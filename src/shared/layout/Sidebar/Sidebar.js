@@ -33,7 +33,7 @@ const Sidebar = () => {
                         <ul className={`nav-menu  ${showMenu ?'d-block':'d-none'}` } id="nav-menu">
                             <li className="nav-item"><NavLink to="/home">Home</NavLink></li>
                             <li className="nav-item"><NavLink to="/skills">Skills</NavLink></li>
-                            <li className="nav-item"><NavLink to="/projects">Projects</NavLink></li>
+                            <li className="nav-item"><NavLink to="/project">Projects</NavLink></li>
                             <li className="nav-item"><NavLink to="/contact">Contact</NavLink></li>
                         </ul>
                     </div>
