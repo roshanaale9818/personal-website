@@ -544,3 +544,16 @@
         .site-section{
             height: 100vh;
         }
+
+        .modal-header{
+            padding: 5px;
+          }
+          .modal-header h2{
+            font-size: 30px;
+          }
+          .error-text{
+            color: red;
+          }
+          .invalid{
+            border-color: red;
+          }

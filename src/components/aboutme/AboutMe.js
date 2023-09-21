@@ -2,48 +2,48 @@ import React from "react";
 const AboutMe = ()=>{
 return <React.Fragment>
       {/* <!--About me starts--> */}
-                <section class="aboutme-section bg-color-1" id="aboutmewrap">
-                    <div class="container">
-                        <div class="aboutme-wrap">
-                            <div class="heading-wrap">
-                                <h1 class="heading-title">About Me</h1>
+                <section className="aboutme-section bg-color-1" id="aboutmewrap">
+                    <div className="container">
+                        <div className="aboutme-wrap">
+                            <div className="heading-wrap">
+                                <h1 className="heading-title">About Me</h1>
                             </div>
-                            <div class="heading-paragraph">
+                            <div className="heading-paragraph">
                                 <p>
                                     Who am I ? Get to know me.
                                 </p>
                             </div>
-                            <div class="heading-line">
+                            <div className="heading-line">
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-lg-4 col-12">
-                                <div class="about-img txt-center mt-50">
+                        <div className="row">
+                            <div className="col-lg-4 col-12">
+                                <div className="about-img txt-center mt-50">
                                     <img src="images/aboutme.jpg" alt="fig" />
                                 </div>
-                                <div class="download-wrap txt-center">
-                                    <a href="download/roshanaalemagar" class="download-btn" download="roshanaalemagar" target="_blank">DOWNLOAD RESUME <i class="fa fa-download ml-2"></i></a>
+                                <div className="download-wrap txt-center">
+                                    <a href="download/roshanaalemagar" className="download-btn" download="roshanaalemagar" target="_blank">DOWNLOAD RESUME <i className="fa fa-download ml-2"></i></a>
                                 </div>
                             </div>
-                            <div class="col-lg-8 col-12">
-                                <div class="item-wrap sub-title">
-                                    <h3 class="item-title">
+                            <div className="col-lg-8 col-12">
+                                <div className="item-wrap sub-title">
+                                    <h3 className="item-title">
                                         Roshan Aale Magar
                                     </h3>
-                                    <div class="item-subtitle">
+                                    <div className="item-subtitle">
                                         FrontEnd Developer
                                     </div>
-                                    <div class="item-paragraph">
+                                    <div className="item-paragraph">
                                         <p>
                                             I am a dedicated, hardworking and proactive web developer very interested in front-end development. I am strategic thinker who is passionate about helping clients to reach theirs goals. I have ability to craft unique user interface and highly functional
                                             products while still maintaining proper aesthetics.
 
                                         </p>
                                     </div>
-                                    <div class="personal-info">
-                                        <div class="row">
-                                            <div class="col-md-6 col-12">
-                                                <div class="info-list">
+                                    <div className="personal-info">
+                                        <div className="row">
+                                            <div className="col-md-6 col-12">
+                                                <div className="info-list">
                                                     <ul>
                                                         <li><span>Birthday:</span> 05. 31.1998</li>
                                                         <li><span>Address:</span>MidBaneshwor,Kathmandu</li>
@@ -51,8 +51,8 @@ return <React.Fragment>
                                                     </ul>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6 col-12">
-                                                <div class="info-list">
+                                            <div className="col-md-6 col-12">
+                                                <div className="info-list">
                                                     <ul>
                                                         <li><span>Mail:</span> roshanaale54@gmail.com</li>
                                                         {/* <!-- <li><span>Phone:</span> 9818009826</li> --> */}
