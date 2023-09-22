@@ -7,17 +7,7 @@ const AdminMain = () => {
     return <React.Fragment>
         <div className='site-wrappers'>
             <div className='top-wraps'>
-                <div className="container">
-                    <div className="navbar">
-                        
-                    </div>
-                </div>
-                {/* <Sidebar /> */}
-                {/* <div className="main-content">
-               
-                </div> */}
-
-                {/* { true && } */}
+             
                 <AdminSideBar></AdminSideBar>
 
                 <div className="content">

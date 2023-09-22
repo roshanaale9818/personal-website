@@ -38,6 +38,16 @@ const AdminSideBar = () => {
         }
     ]
     return <React.Fragment>
+           {/* <div className="container">
+                    <div className="navbar custom-navbar">
+                        <div className="row">
+                            <div className="col-4">
+                                Logo
+                            </div>
+                        </div>
+
+                    </div>
+                </div> */}
         <div className="sidebar">
             {/* <Link class="active" href="#home">Home</Link>
             <Link href="#news">Images</Link>

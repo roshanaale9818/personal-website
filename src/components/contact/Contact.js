@@ -51,7 +51,7 @@ const Contact = ()=>{
                             </div>
                             <div className="col-lg-6 col-12">
                                 <div className="form-wrap">
-                                    <form name="myForm" onsubmit="return(validate())">
+                                    <form name="myForm">
                                         <div className="row">
                                             <div className="col-lg-12 form-group">
                                                 <input type="text" className="form-control" name="fullName" placeholder="FULLNAME" />

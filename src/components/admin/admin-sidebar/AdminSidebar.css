@@ -54,3 +54,6 @@
       float: none;
     }
   }
+  .custom-navbar{
+    position: fixed;
+  }
