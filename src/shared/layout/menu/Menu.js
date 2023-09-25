@@ -16,6 +16,7 @@ const NavMenu = (props)=>{
     }
     return <React.Fragment>
         <Link to={props.data.url} className={isActive(props.data.url)}>{props.data.name}</Link>
+
     </React.Fragment>
 }
 export {NavMenu};
