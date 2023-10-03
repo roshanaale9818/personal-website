@@ -68,9 +68,9 @@ const AdminSideBar = () => {
             {navLinks.map(x => {
                 return <NavMenu key={x.name} data={x}></NavMenu>
             })}
-            <div className="d-block">
+            {/* <div className="d-block">
                 <button onClick={onLogOutHandler} className={"btn-danger w-100"}>Logout</button>
-            </div>
+            </div> */}
         </div>
     </React.Fragment>
 }

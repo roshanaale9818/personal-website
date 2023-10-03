@@ -16,6 +16,7 @@ import { AdminUsers } from '../components/admin/admin-users/Admin.users';
 import { AdminProject } from '../components/admin/admin-project/Admin.project';
 import { AdminSkill } from '../components/admin/admin-skill/Admin.skill';
 import { AdminImage } from '../components/admin/admin-image/Admin.image';
+import { Signup } from '../components/signup/Signup';
 
 
 const routes = createBrowserRouter([
@@ -29,6 +30,7 @@ const routes = createBrowserRouter([
             { path: '/skills', element: <Skill /> },
             { path: '/project', element: <Project /> },
             { path: '/contact', element: <Contact /> },
+            { path: '/signup', element: <Signup /> },
            
 
         ]
