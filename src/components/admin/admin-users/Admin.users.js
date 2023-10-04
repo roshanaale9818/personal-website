@@ -1,5 +1,42 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { apiUrl } from "../../../environment/environment";
 const AdminUsers = ()=>{
+
+const [usersList, setUserList]= useState([]);
+
+  const getUsers = async ()=>{
+    console.log("GETTING USERS");
+    console.log("TOKEN",localStorage.getItem('token'))
+    if (!localStorage.getItem('token')){
+      return;
+    }
+    await axios.get(`${apiUrl}auth/getUsers`,{
+      headers:{
+        "x-access-token":localStorage.getItem("token")
+      }
+    }).then((res) => {
+      console.log("RES",res.data)
+      if (res.data.status === "ok") {
+        console.log("SETTING UP",res.data.data)
+        setUserList(res.data.data);
+          // console.log("Success login");
+          // showAlert("success", res.data.message);
+
+      }
+      else{
+        // setUserList(res.data.data);
+          // showAlert("error", res.data.message);
+      }
+   }).catch((err) => {
+      console.error(err);
+      // showAlert("error", err);
+  })
+  }
+  useEffect(() => {
+    
+  getUsers();
+}, []);
     return  <React.Fragment>
         <div className="container">
         <div className="title">
@@ -8,20 +45,24 @@ const AdminUsers = ()=>{
         <table className="table table-bordered">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      {/* <th scope="col">#</th> */}
+      <th scope="col">Username</th>
+      <th scope="col">Email</th>
+      <th scope="col">Created At</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
+    { usersList.length>0 &&
+        usersList.map(x=>{
+          return (<tr key={x.id}>
+          <td>{x.username}</td>
+          <td>{x.email}</td>
+          <td>{x.createdAt}</td>
+        </tr>)
+         
+        })
+ }
+    {/* <tr>
       <th scope="row">2</th>
       <td>Jacob</td>
       <td>Thornton</td>
@@ -32,7 +73,7 @@ const AdminUsers = ()=>{
       <td>Larry</td>
       <td>the Bird</td>
       <td>@twitter</td>
-    </tr>
+    </tr> */}
   </tbody>
 </table>
         </div>

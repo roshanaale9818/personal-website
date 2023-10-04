@@ -75,13 +75,13 @@ const AdminImage = () => {
           </div>
           <div className="modal-body">
             <form>
-              <div class="form-group">
-                <label for="exampleFormControlInput1">Email address</label>
-                <input type="file" alt="fss" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" />
+              <div className="form-group">
+                <label htmlFor="exampleFormControlInput1">Email address</label>
+                <input type="file" alt="fss" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com" />
               </div>
-              <div class="form-group">
-                <label for="exampleFormControlSelect1">Type</label>
-                <select class="form-control" id="exampleFormControlSelect1">
+              <div className="form-group">
+                <label htmlFor="exampleFormControlSelect1">Type</label>
+                <select className="form-control" id="exampleFormControlSelect1">
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>
