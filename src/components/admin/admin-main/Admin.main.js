@@ -4,6 +4,7 @@ import { Outlet } from "react-router-dom";
 import { AdminSideBar } from "../admin-sidebar/AdminSidebar";
 import "./Admin.main.css";
 import { AdminHeader } from "../admin-header/Admin.header";
+import { ToastContainer } from "react-toastify";
 const AdminMain = () => {
     return <React.Fragment>
         
@@ -19,6 +20,8 @@ const AdminMain = () => {
             </div>
             </div>
         </div>
+        <ToastContainer />
+
     </React.Fragment>
 };
 export { AdminMain };

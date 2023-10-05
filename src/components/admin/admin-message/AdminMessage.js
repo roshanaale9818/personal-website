@@ -1,5 +1,28 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { apiUrl } from "../../../environment/environment";
+import NoRecordsRow from "../../../shared/UI/no-records-table-row";
 const AdminMessage = ()=>{
+const [messageList, setMessage]=useState([]);
+useEffect(()=>{
+    getMessages();
+},[])
+  const getMessages = async ()=>{
+    await axios.get(`${apiUrl}contact/getMessages`,{
+      headers:{
+        "x-access-token":localStorage.getItem("token")
+      }
+    }).then((res)=>{
+        if(res.data.status==="ok"){
+          setMessage(res.data.data);
+        }
+        else{
+          setMessage([]);
+        }
+    })
+  }
+
+
     return  <React.Fragment>
         <div className="container">
         <div className="title">
@@ -8,31 +31,28 @@ const AdminMessage = ()=>{
         <table className="table table-bordered">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      {/* <th scope="col">#</th> */}
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Subject</th>
+      <th scope="col">Message</th>
+      <th scope="col">Created At</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    {(messageList&&messageList.length > 0) ? messageList.map(msg=>{
+      return (    <tr key={msg.id}>
+        {/* <th scope="row">1</th> */}
+        <td>{msg.name}</td>
+        <td>{msg.email}</td>
+        <td>{msg.subject}</td>
+        <td>{msg.message}</td>
+        <td>{msg.createdAt}</td>
+      </tr>)
+    }):
+    <NoRecordsRow colSpan="6" align="center"></NoRecordsRow>
+    }
+
   </tbody>
 </table>
         </div>

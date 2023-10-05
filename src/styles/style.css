@@ -377,7 +377,7 @@
         
         .form-group input {
             height: 50px;
-            color: #ffffff
+            /* color: #ffffff */
         }
         
         textarea {
@@ -556,4 +556,7 @@
           }
           .invalid{
             border-color: red;
+          }
+          .form-control{
+            height: auto;
           }
