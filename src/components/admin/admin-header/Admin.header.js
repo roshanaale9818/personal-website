@@ -1,13 +1,13 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Admin.header.css";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
 const AdminHeader  = ()=>{
   const navigate = useNavigate();
-    const notify = () => toast.error("Wow so easy!");
+
     const onLogout = ()=>{
      if( window.confirm("Are you sure you want to logout ?")){
         navigate("/home")
