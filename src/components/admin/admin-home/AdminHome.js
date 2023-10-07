@@ -12,11 +12,9 @@ const AdminHome = () => {
         const getData = async () => {
             try {
                 const result = await _axiosInstance.get('home/gethome');
-                // console.log("ER", result);
                 if (result.data.status === 'ok') {
 
                     let resBody = result.data.data;
-                    // console.log("personalinfo",personalInfo)
                     formik.setValues({
                         address: resBody.address,
                         name: resBody.name,
@@ -35,10 +33,7 @@ const AdminHome = () => {
 
         getData();
     }, [])
-    // address, email,description,name,job_designation,short_description,greeting
-    // const initValue = ()=>{
 
-    // }
 
     const formik = useFormik({
         initialValues: {

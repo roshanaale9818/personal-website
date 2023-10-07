@@ -17,6 +17,7 @@ import { AdminProject } from '../components/admin/admin-project/Admin.project';
 import { AdminSkill } from '../components/admin/admin-skill/Admin.skill';
 import { AdminImage } from '../components/admin/admin-image/Admin.image';
 import { Signup } from '../components/signup/Signup';
+import { AdminResume } from '../components/admin/admin-resume/Admin.resume';
 
 
 const routes = createBrowserRouter([
@@ -50,6 +51,7 @@ const routes = createBrowserRouter([
             { path: '/admin/projects', element: <AdminProject /> },
             { path: '/admin/skill', element: <AdminSkill /> },
             { path: '/admin/images', element: <AdminImage /> },
+            { path: '/admin/resume', element: <AdminResume /> },
 
 
         ]

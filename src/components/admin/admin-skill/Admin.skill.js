@@ -145,9 +145,7 @@ const AdminSkill = () => {
             {/* <th scope="col">#</th> */}
             <th scope="col">Name</th>
             <th scope="col">Type</th>
-            {/* <th scope="col">Description</th>
-            <th scope="col">Github Repo</th> */}
-            {/* <th scope="col">Created At</th> */}
+            
             <th scope="col">Action</th>
 
 

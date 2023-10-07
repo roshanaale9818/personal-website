@@ -45,32 +45,19 @@ const AdminSideBar = () => {
 
             name: "Users",
             url: '/admin/users'
+        },
+        {
+
+            name: "Upload Resume",
+            url: '/admin/resume'
         }
     ]
     return <React.Fragment>
-        {/* <div className="container">
-                    <div className="navbar custom-navbar">
-                        <div className="row">
-                            <div className="col-4">
-                                Logo
-                            </div>
-                        </div>
-
-                    </div>
-                </div> */}
         <div className="sidebar">
-            {/* <Link class="active" href="#home">Home</Link>
-            <Link href="#news">Images</Link>
-            <Link href="#contact">Skills</Link>
-            <Link href="#about">Personal Info</Link>
-            <Link href="#about">Messages</Link>
-            <Link href="#about">Users</Link> */}
             {navLinks.map(x => {
                 return <NavMenu key={x.name} data={x}></NavMenu>
             })}
-            {/* <div className="d-block">
-                <button onClick={onLogOutHandler} className={"btn-danger w-100"}>Logout</button>
-            </div> */}
+
         </div>
     </React.Fragment>
 }
