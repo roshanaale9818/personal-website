@@ -1,6 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import _axiosInstance from "../../shared/services/axios.instance";
 const Skill = ()=>{
+    const [data,setData]= useState([]);
+    useEffect(() => {
+        const getData = async () => {
+            try {
+                const result = await _axiosInstance.get('skill/getskills');
+                // console.log("ER", result);
+                if (result.data.status === 'ok') {
+                    setData(result.data.data);
+                    let resBody=result.data.data;
+                    setData(resBody);
+                    // console.log("personalinfo",personalInfo)
 
+                }
+
+            } catch (error) {
+                console.log("Error", error)
+            }
+        };
+
+        getData();
+    }, [])
     return <React.Fragment>
               <section className="myskills-section bg-color-1 site-section" id="skills-wrap">
                     <div className="container">
@@ -23,12 +44,14 @@ const Skill = ()=>{
                                 </div>
                                 <div className="skill-list">
                                     <ul>
-                                        <li>Typescript</li>
-                                        <li>Angular</li>
-                                        <li>Javascript</li>
-                                        <li>HTML , CSS</li>
-                                        <li>Ionic 4</li>
-                                        <li>Object Oriented Programming</li>
+                 
+                                        {
+                                            (data && data.length>0)&&data.filter(x=>x.type==="0").map((item)=>{
+                                                return (
+                                                    <li>{item.name}</li>
+                                                )
+                                            })
+                                        }
                                     </ul>
                                 </div>
                             </div>
@@ -38,11 +61,14 @@ const Skill = ()=>{
                                 </div>
                                 <div className="skill-list">
                                     <ul>
-                                        <li>Keen to learn new technology</li>
-                                        <li>Quick Learner</li>
-                                        <li>Teamwork and leadership</li>
-                                        <li>Active Listening</li>
-                                        <li>Problem Solving</li>
+                 
+                                        {
+                                            (data && data.length>0)&&data.filter(x=>x.type==="1").map((item)=>{
+                                                return (
+                                                    <li>{item.name}</li>
+                                                )
+                                            })
+                                        }
                                     </ul>
                                 </div>
                             </div>

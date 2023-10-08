@@ -1,5 +1,58 @@
-import React from "react";
-const AboutMe = ()=>{
+import React, { useEffect, useState } from "react";
+import _axiosInstance from "../../shared/services/axios.instance";
+const AboutMe = (props)=>{
+    const [imgObj,setImgObj] = useState({});
+    const onDownloadHandler = async()=>{
+        try{
+        //  const response = await  _axiosInstance.get('resume/download');
+        //    const filename = response.headers.get('Content-Disposition').split('filename=')[1];
+        
+        //    // Get the content type from the Content-Type header
+        //    const content_type = response.headers.get('Content-Type');
+   
+        //    // Create a blob from the response data
+        //    const blob = await response.blob();
+   
+        //    // Create a URL for the blob
+        //    const url = window.URL.createObjectURL(blob);
+   
+        //    // Create a temporary anchor element
+        //    const link = document.createElement('a');
+        //    link.href = url;
+        //    link.setAttribute('download', filename);
+   
+        //    // Append the anchor element to the body and trigger a click event
+        //    document.body.appendChild(link);
+        //    link.click();
+   
+        //    // Clean up the URL object after the download
+        //    window.URL.revokeObjectURL(url);
+
+        }
+        catch(err){
+
+        }
+    }
+    useEffect(()=>{
+
+        const getPicture = async () => {
+            try {
+                const dataResult = await _axiosInstance.post('image/getsingleimage',{type:'aboutme'});
+                // console.log("ER", result);
+                if (dataResult.data.status === 'ok') {
+                    let resBody=dataResult.data.data;
+                    setImgObj(resBody);
+                    console.log("dataResult",resBody)
+
+                }
+
+            } catch (error) {
+                console.log("Error", error)
+            }
+        };
+
+        getPicture();
+    },[])
 return <React.Fragment>
       {/* <!--About me starts--> */}
                 <section className="aboutme-section bg-color-1" id="aboutmewrap">
@@ -19,30 +72,29 @@ return <React.Fragment>
                         <div className="row">
                             <div className="col-lg-4 col-12">
                                 <div className="about-img txt-center mt-50">
-                                    <img src="images/aboutme.jpg" alt="fig" />
+                                    <img className="aboutImage" src={imgObj.image_url}alt="fig" />
                                 </div>
                                 <div className="download-wrap txt-center">
-                                    <a href="download/roshanaalemagar" className="download-btn" download="roshanaalemagar" target="_blank">DOWNLOAD RESUME <i className="fa fa-download ml-2"></i></a>
+                                    <a href="download/roshanaalemagar" onClick={onDownloadHandler} className="download-btn" download="roshanaalemagar" target="_blank">DOWNLOAD RESUME <i className="fa fa-download ml-2"></i></a>
                                 </div>
                             </div>
                             <div className="col-lg-8 col-12">
                                 <div className="item-wrap sub-title">
                                     <h3 className="item-title">
-                                        Roshan Aale Magar
+                                    {props.data ? props.data.name :"-"}
                                     </h3>
                                     <div className="item-subtitle">
-                                        FrontEnd Developer
+                                    {props.data ? props.data.job_designation :"-"}
                                     </div>
                                     <div className="item-paragraph">
                                         <p>
-                                            I am a dedicated, hardworking and proactive web developer very interested in front-end development. I am strategic thinker who is passionate about helping clients to reach theirs goals. I have ability to craft unique user interface and highly functional
-                                            products while still maintaining proper aesthetics.
+                                        {props.data ? props.data.description :"-"}
 
                                         </p>
                                     </div>
                                     <div className="personal-info">
                                         <div className="row">
-                                            <div className="col-md-6 col-12">
+                                            {/* <div className="col-md-6 col-12">
                                                 <div className="info-list">
                                                     <ul>
                                                         <li><span>Birthday:</span> 05. 31.1998</li>
@@ -50,13 +102,13 @@ return <React.Fragment>
                                                         <li><span>Age:</span> 20 years</li>
                                                     </ul>
                                                 </div>
-                                            </div>
+                                            </div> */}
                                             <div className="col-md-6 col-12">
                                                 <div className="info-list">
                                                     <ul>
-                                                        <li><span>Mail:</span> roshanaale54@gmail.com</li>
+                                                        <li><span>Mail:</span> {props.data ? props.data.email :"-"}</li>
                                                         {/* <!-- <li><span>Phone:</span> 9818009826</li> --> */}
-                                                        <li><span>Study:</span> BIT</li>
+                                                        {/* <li><span>Study:</span> BIT</li> */}
                                                     </ul>
                                                 </div>
                                             </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import { Sidebar } from "../../shared/layout/Sidebar/Sidebar";
+import { ToastContainer } from "react-toastify";
 const Main = () => {
     return <React.Fragment>
         <div className='site-wrapper'>
@@ -11,6 +12,7 @@ const Main = () => {
                 </div>
             </div>
         </div>
+        <ToastContainer />
     </React.Fragment>
 }
 export { Main };
