@@ -386,7 +386,7 @@
         }
         
         .form-control:focus {
-            background: transparent;
+            /* background: transparent; */
         }
         
         .site-footer {

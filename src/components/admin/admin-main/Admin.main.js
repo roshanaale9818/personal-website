@@ -1,12 +1,14 @@
 
 import React from "react"
-import { Outlet } from "react-router-dom";
+import { Outlet, useOutlet } from "react-router-dom";
 import { AdminSideBar } from "../admin-sidebar/AdminSidebar";
 import "./Admin.main.css";
 import { AdminHeader } from "../admin-header/Admin.header";
 import { ToastContainer } from "react-toastify";
 const AdminMain = () => {
+    const outlet = useOutlet();
     return <React.Fragment>
+        {/* {props.children} */}
         
         <div className='site-wrappers'>
             <div className='top-wraps'>
@@ -15,7 +17,8 @@ const AdminMain = () => {
 
             <div className="body-section">
             <div className="content">
-                    <Outlet />
+                    {/* <Outlet /> */}
+                    {outlet}
                 </div>
             </div>
             </div>

@@ -48,7 +48,7 @@ const Skill = ()=>{
                                         {
                                             (data && data.length>0)&&data.filter(x=>x.type==="0").map((item)=>{
                                                 return (
-                                                    <li>{item.name}</li>
+                                                    <li key={item.id}>{item.name}</li>
                                                 )
                                             })
                                         }

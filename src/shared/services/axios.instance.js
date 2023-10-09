@@ -6,7 +6,7 @@ const _axiosInstance = axios.create({
   headers: {
     'Content-Type': 'application/json',
     // Add your authorization token here
-    'x-access-token': `${localStorage.getItem('token')||null}`
+    'x-access-token': `${sessionStorage.getItem('accessToken')||null}`
   }
 });
 

@@ -1,16 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Admin.header.css";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { AuthComponent } from "../../../shared/components/Auth";
+import AuthContext from "../../../shared/services/providers/auth.context";
+
+
 
 const AdminHeader  = ()=>{
+  const authCtx=useContext(AuthContext);
   const navigate = useNavigate();
-    const onLogout = ()=>{
-     if( window.confirm("Are you sure you want to logout ?")){
-        navigate("/home")
-     }
-    }
+  const onLogout = ()=>{
+      if(window.confirm("Are you sure you want to logout?")){
+          authCtx.logOut();
+          sessionStorage.clear();
+          navigate('/home');
+          window.location.replace('/home');
+      }
+  }
 return <React.Fragment>
     
 <header className="admin-header">

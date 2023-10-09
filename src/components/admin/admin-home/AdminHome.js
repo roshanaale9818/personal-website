@@ -42,7 +42,8 @@ const AdminHome = () => {
             description: '',
             greeting: '',
             short_description: '',
-            designation: ''
+            designation: '',
+            name: ''
         },
         // enableReinitialize: true,
         validationSchema: Yup.object().shape({
@@ -55,7 +56,9 @@ const AdminHome = () => {
             short_description: Yup.string()
                 .required("Short Description is required"),
             designation: Yup.string()
-                .required("Short Description is required")
+                .required("Short Description is required"),
+                name: Yup.string()
+                .required("Name is required")
         }),
         onSubmit: async (values) => {
             console.log("values called", values);

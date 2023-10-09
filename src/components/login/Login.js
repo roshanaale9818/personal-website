@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Login.css";
 import 'font-awesome/css/font-awesome.min.css';
 import { isNotEmpty } from "../../shared/form-logics/form-logic";
@@ -7,7 +7,10 @@ import axios from "axios";
 import { apiUrl } from "../../environment/environment";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import AuthContext from "../../shared/services/providers/auth.context";
+
 const Login = (props) => {
+    const authCtx=useContext(AuthContext);
     const navigate = useNavigate();
     const {
         value: userNameValue,
@@ -49,6 +52,9 @@ const Login = (props) => {
                 console.log("Success login");
                 showAlert("success", 'Login successfull');
                 localStorage.setItem('token',res.data.data.accessToken);
+                const user = res.data.data;
+                authCtx.logIn(user);
+                console.log("CONTEXT USER",user);
                 navigate('/admin/home');
             }
             else{

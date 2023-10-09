@@ -74,7 +74,7 @@ const Home = () => {
                             </div>
                             <div className="item-title">
                                 <h1>I am  
-                                {data ? " "+data.name :" -"}
+                                {data &&data.name ? " "+data.name :" -"}
                                 </h1>
                             </div>
                             <div className="item-intro">
