@@ -70,7 +70,7 @@ return <React.Fragment>
                         <div className="row">
                             <div className="col-lg-4 col-12">
                                 <div className="about-img txt-center mt-50">
-                                    <img className="aboutImage" src={imgObj.image_url}alt="fig" />
+                                    <img className="aboutImage" src={imgObj&& imgObj.image_url?imgObj.image_url:''}alt="fig" />
                                 </div>
                                 <div className="download-wrap txt-center">
                                     <button onClick={onDownloadHandler} className="download-btn" download="roshanaalemagar" target="_blank">DOWNLOAD RESUME <i className="fa fa-download ml-2"></i></button>

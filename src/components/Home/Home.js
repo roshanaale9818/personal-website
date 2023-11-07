@@ -6,7 +6,9 @@ import _axiosInstance from "../../shared/services/axios.instance";
 const Home = () => {
     const [data,setData]= useState([]);
     const [socialMedia,setSocialMedia]= useState([]);
-    const [homeObj,setHomeObj]= useState({});
+    const [homeObj,setHomeObj]= useState({
+        image_url:''
+    });
     useEffect(() => {
         const getData = async () => {
             try {
@@ -66,7 +68,7 @@ const Home = () => {
                 <div className="content-section">
                     <div className="top-content">
                         <div className="item-img">
-                            <img className="homeImage" src={homeObj?homeObj.image_url:''} alt="img" />
+                            <img className="homeImage" src={homeObj && homeObj.image_url !== undefined ?homeObj.image_url:''} alt="img" />
                         </div>
                         <div className="item-content">
                             <div className="item-top-text">

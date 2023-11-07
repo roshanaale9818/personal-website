@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { $ } from 'react-jquery-plugin';
 import {NavLink} from 'react-router-dom';
 
+
 const Sidebar = () => {
     const [showMenu,setShowMenu]=useState(false);
+
     const onToggleHandler = ()=>{
         setShowMenu(!showMenu)
     }
@@ -19,6 +21,8 @@ const Sidebar = () => {
         })
     },[])
     return <React.Fragment>
+
+    
   <div className="site-navigation">
                 <div className="button-wrap" onClick={onToggleHandler}>
                     <button id="btn-toogle" className="btn-toggle navToggler">
