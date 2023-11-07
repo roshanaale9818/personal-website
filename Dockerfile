@@ -20,10 +20,28 @@ RUN npm run build
 FROM nginx:alpine
 
 # Copy the built React app to the Nginx public directory
-COPY --from=build /app/build /usr/share/nginx/html
+# COPY --from=build /app/build /usr/share/nginx/html
 
 # Expose port 80
-EXPOSE 3000
+# EXPOSE 3000
+
+
+# Copy custom nginx configuration
+COPY /Frontend/nginx.conf /etc/nginx/conf.d/default.conf
+
+# Copy the built React app to the Nginx public directory
+COPY --from=build /app/build /usr/share/nginx/html
+
+
+
+
+
+# COPY /Frontend/nginx.conf /etc/nginx/conf.d/default.conf
+# COPY --from=build /app/nginx.conf /etc/nginx/conf.d/default.conf
+
+# Expose port 80
+EXPOSE 80
+
 
 # Start Nginx when the container starts
 CMD ["nginx", "-g", "daemon off;"]
