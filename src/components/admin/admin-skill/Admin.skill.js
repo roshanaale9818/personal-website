@@ -42,7 +42,7 @@ const AdminSkill = () => {
   }
   const onDeleteHandler = async (value)=>{
     if(window.confirm("Are you sure you want to delete "+value.name+"?")){
-     const res = await  _axiosInstance.delete('skill/delete');
+     const res = await  _axiosInstance.delete('skill/delete?id='+value.id);
      if(res.data.status==='ok'){
       showAlert('success',res.data.message);
       getSkills();
